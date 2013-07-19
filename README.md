@@ -29,7 +29,6 @@ Forming Tweets
 
 As of version 0.1.1 there are only 2 variables that represent post values.  Due to the wrapping of t.co links, it appears that you need to have a certain amount of characters available for a tweet to go through.  This may result in a "tweet to long" error.  If you experience this error please send an e-mail to c0nc3pt.SF at gmail.com with the tweet you were trying to send so I can work on a solution.
 
-%T = Title
-
+%T = Title  
 %U = URL
 
