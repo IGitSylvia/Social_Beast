@@ -1,0 +1,10 @@
+/* Version 0.1 (Alpha) */
+
+-Base Version
+-Custom Twitter Apps Usable
+-Can specify while post types to enable plugin
+-Twitter functionality enabled
+-Can set default Twitter Message
+-Keys for URL and Title enabled
+-Enabled ShortURL support
+-Embedded Tweet enabled

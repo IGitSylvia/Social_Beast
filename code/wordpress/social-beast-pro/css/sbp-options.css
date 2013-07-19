@@ -1,0 +1,56 @@
+.app_options{
+	display: block;
+}
+
+.app_options li{
+	display: inline-block;
+}
+
+.app_select{
+	padding: 5px 0;
+	width: 100px;
+	text-align: center;
+	border: solid 1px #999999;
+	background-color: #FFC;
+	cursor: pointer;
+}
+.app_select:hover{
+	background-color: #6FF;
+}
+
+#default_tweet textarea {
+	width: 400px;
+	height: 100px;
+}
+input.disabledInput {
+	background-color: #666;
+}
+
+input.selectedApp {
+	background-color: #0F3;
+}
+
+#twt_accounts div {
+	height: 48px;
+}
+#twt_accounts .twtuser {
+	display: block;
+	min-width: 200px;
+}
+#twt_accounts .twtuser div {
+	float: left;
+}
+#twt_accounts div.twt_name, #twt_accounts div.twt_screenname {
+	height: 19px;
+	display: block;
+	float: none;
+	padding: 5px 0 0 5px;
+	font-weight: bold;
+}
+
+#twt_accounts .twt_followers {
+	padding: 8px 0 0 10px;
+	height: 40px;
+	font-weight: bold;
+}
+	

@@ -1,0 +1,10 @@
+#sb_tweet {
+	width: 70%;
+}
+#sb_tweet textarea {
+	width: 100%;
+	height: 75px;
+}
+#sb_tweet_char{
+	text-align: right;
+}
