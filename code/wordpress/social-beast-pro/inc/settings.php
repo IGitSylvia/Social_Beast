@@ -12,15 +12,24 @@ if(isset($_POST['submit'])){
 	update_option('sb_default_tweet',$_POST['sb_default_tweet']);
 }
 
-//Calls classes
-$twtOAuthUtil = new twtOAuthUtil;
-$twtUtility = new twtUtility;
+//Sets key values
+if(get_option('sb_custom_keys') == 1){
+	$consumerKey = get_option('sb_consumer_key');
+	$consumerSecret = get_option('sb_consumer_secret');
+	$accessKey = get_option('sb_access_key');
+	$accessSecret = get_option('sb_access_secret');
+}
 
-//Sends authorization request
+//Calls classes
+global $twtOAuthUtil;
+global $twtUtility;
+
+/* Sends authorization request.  Currently disabled.
 if($_GET['oauth'] == 'authorize'){
 	$twtOAuthUtil->twtUserAuth();
 
 }
+*/
 
 function checkPostType($value){
 	$postChk = get_option('sb_post_types');
@@ -48,25 +57,25 @@ function checkPostType($value){
                     <ul>
                         <li>
                             <label for="sb_consumer_key">Consumer Key:</label>
-                            <input id="sb_consumer_key" name="sb_consumer_key" type="password" value="<?php echo get_option('sb_consumer_key'); ?>" />
+                            <input id="sb_consumer_key" name="sb_consumer_key" type="password" value="<?php if(isset($consumerKey)) echo $consumerKey; ?>" />
                         </li>
                         <li>
                             <label for="sb_consumer_secret">Consumer Secret:</label>
-                            <input id="sb_consumer_secret" name="sb_consumer_secret" type="password" value="<?php echo get_option('sb_consumer_secret'); ?>" />
+                            <input id="sb_consumer_secret" name="sb_consumer_secret" type="password" value="<?php if(isset($consumerSecret)) echo $consumerSecret; ?>" />
                         </li>
                         <li>
                             <label for="sb_access_key">Access Token:</label>
-                            <input id="sb_access_key" name="sb_access_key" type="password" value="<?php echo get_option('sb_access_key'); ?>" />
+                            <input id="sb_access_key" name="sb_access_key" type="password" value="<?php if(isset($accessKey)) echo $accessKey; ?>" />
                         </li>
                         <li>
                             <label for="sb_access_secret">Access Secret:</label>
-                            <input id="sb_access_secret" name="sb_access_secret" type="password" value="<?php echo get_option('sb_access_secret'); ?>" />
+                            <input id="sb_access_secret" name="sb_access_secret" type="password" value="<?php if(isset($accessSecret)) echo $accessSecret; ?>" />
                         </li>
                         <input type="hidden" id="sb_custom_keys" name="sb_custom_keys" value="<?php echo get_option('sb_custom_keys'); ?>" />
                     </ul>
                 </div>
             <div id="twt_accounts">
-                <?php $twtUtility->verifiedAccount();	?>
+                <?php if(isset($accessKey)) $twtUtility->verifiedAccount(); 	?>
             </div>
         </div>
         <div id="post_types">

@@ -8,3 +8,11 @@
 -Keys for URL and Title enabled
 -Enabled ShortURL support
 -Embedded Tweet enabled
+
+/* Version 0.1.1 (Alpha) */
+
+-Fixed issue with initial sb_post_types setup where data would double serialze.
+-Fixed issue with initial sb_user_access setup where data would double serialze.
+-Fixed request method problem with "GET" query variables that caused verifyAccount() method not to work.
+-Disabled oAuth user Authorization redirect.
+

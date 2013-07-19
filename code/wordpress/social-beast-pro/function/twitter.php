@@ -6,15 +6,11 @@
 require_once(SB_DIR . "function/twitter/oauth.php");
 require_once(SB_DIR . "function/twitter/util.php");
 
+add_action('save_post','sb_twtSavePost');
 add_action('new_to_publish','sb_twtPublishPost');
 add_action('draft_to_publish','sb_twtPublishPost');
 add_action('pending_to_publish','sb_twtPublishPost');
 add_action('future_to_publish','sb_twtPublishPost');
-add_action('save_post','sb_twtSavePost');
-
-function test_sb($post){
-	update_post_meta($post->ID,'_sb_savedtweet','changed');
-}
 
 function sb_twtPublishPost($post){
 	global $twtUtility;
@@ -40,8 +36,6 @@ function sb_twtPublishPost($post){
 			}
 		}
 	}
-	
-	
 }
 
 function sb_twtSavePost(){

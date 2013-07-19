@@ -79,7 +79,8 @@ function sbpSetup(){
 		'users' => array(),
 		'groups' => array("administrator")
 	);
-	$access = serialize($access);
+	
+	$posttypes = array('post');	
 	
 	add_option('sb_consumer_key');
 	add_option('sb_consumer_secret');
@@ -87,7 +88,7 @@ function sbpSetup(){
 	add_option('sb_access_secret');
 	add_option('sb_custom_keys', 1);
 	add_option('sb_user_access',$access);
-	add_option('sb_post_types','a:1:{i:0;s:4:"post";}');
+	add_option('sb_post_types',$posttypes);
 	add_option('sb_default_tweet','%T - %U');
 	sbpDBSetup();
 }

@@ -230,6 +230,8 @@ class twtOAuth {
 						$query .= "&";
 					}
 				}
+			} else {
+				$query = "";
 			}
 			
 			$options = array(
