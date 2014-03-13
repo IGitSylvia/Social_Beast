@@ -1,6 +1,8 @@
 <?php 
 require($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
 header("Content-type: text/javascript");
+
+global $option;
 ?>
 
 selectSBP = document.getElementById("select_sbp_app");
@@ -11,7 +13,7 @@ selectCustom.onclick = enableAppFields;
 window.onload = checkCustomApp;
 
 function checkCustomApp(){
-	var setting = <?php echo get_option('sb_custom_keys'); ?>;
+	var setting = <?php echo $option['custom_keys']; ?>;
     
     if(setting == 0){
     	disableAppFields();

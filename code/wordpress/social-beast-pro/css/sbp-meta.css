@@ -1,10 +1,70 @@
+#sb_ap_button {
+	background-color: #666;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 10px;
+	width: 70px;
+	text-align: center;
+	font-weight: bold;
+}
+#sb_ap_button.enabled {
+	background-color: #00FF33;
+	color: #000;
+	cursor: pointer;
+}
+#sb_ap_button.disabled {
+	background-color: #F00;
+	color: #FFF;
+	cursor: pointer;
+}
+#sb_ap_button.live_tweet {
+	background-color: #00868B;
+	color: #FFF;
+	cursor: pointer;
+}
 #sb_tweet {
 	width: 70%;
+	overflow: hidden;
 }
-#sb_tweet textarea {
-	width: 100%;
+#sb_tweet_autopublish{
+	text-align: left;
+	width: 80%;
+	float: left;
+}
+#sb_tweet_delete {
+	background-color: #F00;
+	color: #FFF;
+	cursor: pointer;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 10px;
+	width: 70px;
+	text-align: center;
+	font-weight: bold;
+}
+#sb_tweet_delete.wait {
+	background-color: #666;
+	color: #fff;
+}
+#sb_tweet_status {
+	display: inline;
+	visibility: hidden;
+}
+#sb_tweetbox {
+	width: 99%;
 	height: 75px;
 }
 #sb_tweet_char{
 	text-align: right;
+	width: 20%;
+	float: left;
+}
+.sb_tweet_postoptions {
+	text-align: right;
+}
+#sb_prev_tweets{
+	display: block;
+	width: 500px;
+
 }

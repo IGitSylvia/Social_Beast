@@ -13,6 +13,7 @@ class twtOAuth {
 	protected $params;
 	
 	function __construct(){
+		global $option;
 		$this->params = array();
 		$this->config = array(
 			"host" => 'api.twitter.com',
@@ -26,17 +27,18 @@ class twtOAuth {
 			"sb_access_secret" => ''	
 		);
 		
-		$this->oauthKeys(get_option('sb_custom_keys'));
+		$this->oauthKeys($option['custom_keys']);
 	}
 	
 	/*
 	** Sets auth keys, allowing users to use their own application.
 	*/
 	private function oauthKeys($custom){
-		$this->consumerKey = ($custom == 1) ? get_option('sb_consumer_key') : $this->config['sb_consumer_key'];
-		$this->consumerSecret = ($custom == 1) ? get_option('sb_consumer_secret') : $this->config['sb_consumer_secret'];
-		$this->oauthKey = ($custom == 1) ? get_option('sb_access_key') : $this->config['sb_access_key'];
-		$this->oauthSecret = ($custom == 1) ? get_option('sb_access_secret') : $this->config['sb_access_secret'];
+		global $twtAppKey;
+		$this->consumerKey = ($custom == 1) ? $twtAppKey['consumerKey'] : $this->config['sb_consumer_key'];
+		$this->consumerSecret = ($custom == 1) ? $twtAppKey['consumerSecret'] : $this->config['sb_consumer_secret'];
+		$this->oauthKey = ($custom == 1) ? $twtAppKey['accessKey'] : $this->config['sb_access_key'];
+		$this->oauthSecret = ($custom == 1) ? $twtAppKey['accessSecret'] : $this->config['sb_access_secret'];
 	}
 	
 	/*
@@ -47,7 +49,6 @@ class twtOAuth {
 		if ($numParams == 0){ return; }
 		
 		$params = func_get_args();
-		error_log('args: ' . $params);
 		foreach($params as $param){
 			$info = explode("=", $param);
 			$this->params[$info[0]] = $info[1];
@@ -220,7 +221,7 @@ class twtOAuth {
 				CURLOPT_POSTFIELDS => $params
 			);
 		} else {
-			if($params != null){
+			if(!empty($params)){
 				$query = "?";
 				$i = count($params);
 				foreach($params as $key => $value){
@@ -241,7 +242,7 @@ class twtOAuth {
 				CURLOPT_HTTPHEADER => $header,
 			);
 		}
-		
+
 		$request = curl_init();
 		curl_setopt_array($request,$options);
 		$response = curl_exec($request);
@@ -283,6 +284,12 @@ class twtOAuth {
 ** a authorizing a user, sending a tweet, seeing retweets and replies, etc.
 */
 class twtOAuthUtil extends twtOAuth {
+	
+	protected function destroyStatus($id){
+		$request = $this->request("POST","statuses/destroy/$id.json");
+		$request = json_decode($request['response'], true);
+		return $request;
+	}
 	
 	/*
 	** Authorizes Twitter accounts for use. Excludes account with custom application.
