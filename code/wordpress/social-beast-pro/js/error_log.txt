@@ -1,8 +1,0 @@
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 38
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 39
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 40
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 41
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 38
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 39
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 40
-[19-Jul-2013 19:57:50] PHP Notice:  Undefined variable: twtAppKey in /var/www/html/4mash.com/.subs/dev/rootwww/wp-content/plugins/social-beast-pro/function/twitter/oauth.php on line 41
