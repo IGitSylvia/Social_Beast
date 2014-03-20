@@ -32,12 +32,11 @@ $consumerSecret =$twtAppKey['consumerSecret'];
 $accessKey = $twtAppKey['accessKey'];
 $accessSecret = $twtAppKey['accessSecret'];
 
-/* Sends authorization request.  Currently disabled.
+
 if($_GET['oauth'] == 'authorize'){
 	$twtOAuthUtil->twtUserAuth();
 
 }
-*/
 
 function checkPostType($value){
 	global $option;

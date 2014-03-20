@@ -44,3 +44,7 @@
 -Tweets can be deleted directly from posts.
 -After the initial tweet, users can send additional tweets from that post.
 -SBP will automatically eliminate spaces from custom app keys.
+
+/* Version 0.2.1 (Alpha) */
+
+-Fixed problem were new columns are not created.  All required DB columns are created on install now.
